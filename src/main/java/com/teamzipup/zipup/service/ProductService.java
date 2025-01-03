@@ -10,9 +10,6 @@ public interface ProductService {
     // 상품 전체 리스트
     List<Product> getAllProducts();
 
-    // 상품 카테고리 리스트
-    List<Product> getProductsByCategory(String category);
-
     // 판매자 제품 등록
     long insertProduct(
             long sellerId,

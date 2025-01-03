@@ -41,4 +41,7 @@ public interface UserMapper {
 
     // 오늘의 상품
     List<Product> getRandomProducts(int count);
+  
+    //판매자 정보 가져오기
+    User getUserBySellerId(Long sellerId);
 }
