@@ -31,8 +31,8 @@ public class ProductController {
     // 가격 포매팅
     private List<String> formatPrices(List<Product> products) {
         return (products == null || products.isEmpty())
-                ? new ArrayList<>()
-                : products.stream().map(product -> String.format("%,d", product.getPrice())).toList();
+            ? new ArrayList<>()
+            : products.stream().map(product -> String.format("%,d", product.getPrice())).toList();
     }
 
     /* 메인 페이지 */
@@ -41,8 +41,7 @@ public class ProductController {
                            @RequestParam(value = "searchType", required = false) String searchType,
                            @RequestParam(value = "query", required = false) String query,
                            @RequestParam(value = "sortOrder", required = false) String sortOrder,
-                           Model model) {
-
+                           Model model) {     
         // 기본값 설정
         if (category == null) category = "ALL";
         if (searchType == null) searchType = "productName";

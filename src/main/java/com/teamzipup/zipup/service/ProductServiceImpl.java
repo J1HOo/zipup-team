@@ -97,5 +97,4 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> getRandomProducts(int count) {
         return productMapper.getRandomProducts(count);
     }
-
 }

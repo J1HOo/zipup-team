@@ -53,6 +53,8 @@
         WHERE p.ID = #{id}
     </select>
 
+    <!-- 카테고리&검색&정렬 -->
+
     <select id="searchProducts">
         SELECT p.*, u.companyName AS companyName
         FROM product p
