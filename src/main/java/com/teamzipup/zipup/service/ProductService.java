@@ -28,4 +28,10 @@ public interface ProductService {
 
     // 상품 ID로 조회
     Product getProductById(long id);
+
+    // 상품 검색 및 필터링
+    List<Product> searchProducts(String category, String searchType, String query, String sortOrder);
+
+    // 오늘의 상품
+    List<Product> getRandomProducts(int count);
 }

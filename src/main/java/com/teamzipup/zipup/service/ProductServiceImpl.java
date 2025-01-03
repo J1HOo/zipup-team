@@ -94,4 +94,14 @@ public class ProductServiceImpl implements ProductService {
     public Product getProductById(long id) {
         return productMapper.findById(id);
     }
+
+    // 상품 검색
+    public List<Product> searchProducts(String category, String searchType, String query, String sortOrder) {
+        return productMapper.searchProducts(category, searchType, query, sortOrder);
+    }
+
+    // 오늘의 상품
+    public List<Product> getRandomProducts(int count) {
+        return productMapper.getRandomProducts(count);
+    }
 }
