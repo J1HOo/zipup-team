@@ -398,8 +398,7 @@ input[type=number] {
     margin-bottom: 20px;
 }
 
-
-/* -------------------- 판매자 생성 파트 ----------------------- */
+/* -------------------- 판매자 제품 등록 파트 ----------------------- */
 
 .seller-detail-container {
     display: grid;
@@ -509,14 +508,17 @@ input[type=number] {
 }
 
 .seller-detail-container .product #price {
-    appearance: none; -moz-appearance: textfield;
-}/*수정 중*/
+    appearance: none;
+    -moz-appearance: textfield;
+}
+
+/*수정 중*/
 
 .seller-detail-container .description-preview {
     width: 853px;
     height: auto;
     display: flex;
-    margin : 30px auto 0;
+    margin: 30px auto 0;
     text-align: center;
     justify-content: center;
     overflow: hidden;
@@ -728,6 +730,110 @@ input[type=number] {
     align-items: center;
 }
 
+/* -------------------- 구매 완료 페이지 -------------------- */
+
+.pc-container {
+    width: 100%;
+    max-width: 407px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.pc-container .shopping_icon {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 10px;
+}
+
+.pc-container .completed-text {
+    color: #3e71fe;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.pc-container .pc-hr {
+    border: 1px solid #777777;
+    margin-top: 25px;
+}
+
+.pc-container .info-hr {
+    border: 1px solid #777777;
+    grid-column: 1 / -1; /* 그리드의 첫 번째 열에서 마지막 열까지 병합 */
+    width: 100%; /* 병합된 상태에서도 가로 길이를 유지 */
+    border-top: 1px solid #eaeaea;
+}
+
+.pc-container .info-grid {
+    display: grid;
+    grid-template-columns: 100px auto;
+    gap: 8px;
+    align-items: center;
+}
+
+.pc-container .announcement {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.pc-container .user-info {
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #777777;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.pc-container .shipping-info {
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #777777;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.pc-container .info-label {
+    font-size: 25px;
+    color: black;
+    font-weight: bold;
+}
+
+
+.pc-container .info-title {
+    font-size: 15px;
+    color: #808080;
+}
+
+.pc-container .info {
+    font-size: 15px;
+    color: black;
+}
+
+.pc-container .info-name {
+    grid-column: 1 / -1;
+    font-size: 18px;
+    color: black;
+}
+
+
+.pc-container .info-option {
+    grid-column: 1 / -1;
+    font-size: 14px;
+    color: #777777;
+}
+
+.pc-container .info-price {
+    font-size: 25px;
+    color: #FA3C56;
+    font-weight: bold;
+    text-align: right;
+}
+
+.pc-container .span-price {
+    color: #FA3C56;
+    font-size: 18px;
+}
+
 /* --------------------  상품 리스트 -------------------- */
 .slider-container {
     display: flex;
@@ -793,22 +899,4 @@ input[type=number] {
     font-size: 18px;
     font-weight: bold;
     color: #3e71fe;
-}
-
-
-/* -------------------- 구매 완료 페이지 -------------------- */
-
-.pc-container{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto; /* 행 크기 자동 조정 */
-    gap: 40px 35px; /*그리드 간격 row column*/
-}
-
-.pc-container .logo {
-    display: flex;
-    justify-items: center;
-    width: 158px;
-    height: 33px;
-    text-align: center;
 }
