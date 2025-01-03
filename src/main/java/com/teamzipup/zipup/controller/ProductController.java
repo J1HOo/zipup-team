@@ -175,4 +175,12 @@ public class ProductController {
         return "productDetail"; // 상세 페이지
 
     }
+
+    /* 상품 상세 페이지 이동 */
+    @GetMapping("/product/{id}")
+    public String viewProductDetail(@PathVariable Long id, Model model) {
+        Product product = productService.getProductById(id); // ID로 상품 조회
+        model.addAttribute("product", product);
+        return "productDetail";
+    }
 }
