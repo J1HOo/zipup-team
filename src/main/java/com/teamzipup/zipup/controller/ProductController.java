@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -27,20 +28,47 @@ public class ProductController {
     @Autowired
     private UserService userService;
 
+    // 가격 포매팅
+    private List<String> formatPrices(List<Product> products) {
+        return (products == null || products.isEmpty())
+            ? new ArrayList<>()
+            : products.stream().map(product -> String.format("%,d", product.getPrice())).toList();
+    }
+
     /* 메인 페이지 */
     @GetMapping("/")
-    public String mainPage(HttpSession session, Model model) {
-        // 로그인 사용자 확인
-        User loginUser = (User) session.getAttribute("loginUser");
-        if (loginUser != null) {
-            model.addAttribute("user", loginUser);
+    public String mainPage(@RequestParam(value = "category", required = false) String category,
+                           @RequestParam(value = "searchType", required = false) String searchType,
+                           @RequestParam(value = "query", required = false) String query,
+                           @RequestParam(value = "sortOrder", required = false) String sortOrder,
+                           Model model) {
+        // 기본값 설정
+        if (category == null) category = "ALL";
+        if (searchType == null) searchType = "productName";
+        if (sortOrder == null) sortOrder = "random";
+
+        // 랜덤 상품
+        if ("ALL".equals(category)) {
+            List<Product> todayProducts = productService.getRandomProducts(5);
+            model.addAttribute("todayProducts", todayProducts);
+            model.addAttribute("formattedTodayPrices", formatPrices(todayProducts));
+        } else {
+            model.addAttribute("todayProducts", new ArrayList<>());
         }
 
-        // 상품 리스트 가져오기
-        List<Product> products = productService.getAllProducts();
-        model.addAttribute("products", products);
 
-        return "index"; // 메인 페이지
+        // 상품 리스트
+        List<Product> products = productService.searchProducts(category, searchType, query, sortOrder);
+        model.addAttribute("products", products);
+        model.addAttribute("formattedPrices", formatPrices(products));
+
+        // 현재 선택된 옵션 전달
+        model.addAttribute("selectedCategory", category);
+        model.addAttribute("searchType", searchType);
+        model.addAttribute("query", query);
+        model.addAttribute("sortOrder", sortOrder);
+
+        return "index";
     }
 
     /* 전체 상품 리스트 페이지 */

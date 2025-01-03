@@ -1,7 +1,9 @@
 package com.teamzipup.zipup.mapper;
 
+import com.teamzipup.zipup.dto.Product;
 import com.teamzipup.zipup.dto.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -31,4 +33,12 @@ public interface UserMapper {
     // 아이디로 조회
     User findById(long id);
 
+    // 상품 검색 및 정렬
+    List<Product> searchProducts(@Param("category") String category,
+                                 @Param("searchType") String searchType,
+                                 @Param("query") String query,
+                                 @Param("sortOrder") String sortOrder);
+
+    // 오늘의 상품
+    List<Product> getRandomProducts(int count);
 }
