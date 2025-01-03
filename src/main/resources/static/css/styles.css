@@ -64,6 +64,9 @@ input[type=number] {
     border: 2px solid #3e71fe;
 }
 
+#email.zipup-input {
+    margin-bottom: 1px;
+
 .zipup-btn {
     width: 407px;
     height: 51px;
