@@ -36,11 +36,14 @@
                 <div class="info-grid">
                     <label class="info-label">주문정보</label>
                     <hr class="info-hr">
+                    <div class="info-home">
+                    <img src="/images/svg/home.svg">
                     <label class="info-name" th:text="${companyName}"></label>
-                    <label class="info-name" th:text="${product.productName}"></label>
+                    </div>
+                    <label class="info-product-name" th:text="${product.productName}"></label>
                     <span class="info-option" th:text="${option1} + ' / ' + ${option2}"></span>
                     <span class="span-price">결제 금액</span>
-                    <label class="info-price" th:text="${formattedPrice}"></label>
+                    <span class="won"><label class="info-price" th:text="${formattedPrice}"></label>원</span>
                 </div>
             </div>
             <button onclick="location.href='/' " class="zipup-btn">홈 화면 가기</button>

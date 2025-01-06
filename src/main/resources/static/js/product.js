@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
             colorInputs.forEach(input => input.value = '');  // 색상 옵션 초기화
             sizeInputs.forEach(input => input.value = '');  // 사이즈 옵션 초기화
 
-            // 추가된 옵션들 삭제
+            // 추가된 옵션 텍스트 삭제, 원상복귀
             colorOptionDivs.forEach(option => option.remove());
             sizeOptionDivs.forEach(option => option.remove());
 
