@@ -53,8 +53,7 @@ zipup
 ├── HELP.md
 ├── mvnw
 ├── mvnw.cmd
-├── pom.xml
-└── 어노테이션.txt
+└── pom.xml
 ```
 
 ---
