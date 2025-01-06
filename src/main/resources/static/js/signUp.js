@@ -2,13 +2,13 @@ let isEmailChecked = false; // 이메일 중복 확인 여부
 document.addEventListener("DOMContentLoaded", function () {
     const passwordInput = document.getElementById("password");
     const userNameInput = document.getElementById("userName");
-    const form = document.querySelector(".signup-form");
+    const userForm = document.querySelector(".signup-user-form");
 
     const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*+=-])[A-Za-z\d!@#$%^&*+=-]{8,}$/;
     const namePattern = /^[A-Za-z가-힣]+$/;
 
     // 폼 제출 시 비밀번호 및 이름 검사
-    form.addEventListener("submit", function (event) {
+    userForm.addEventListener("submit", function (event) {
         const password = passwordInput.value;
         const userName = userNameInput.value;
 
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 /******************** 아이디(이메일) 중복************************************************/
 
 document.addEventListener("DOMContentLoaded", function () {
-    const checkEmailBtn = document.getElementById("check-email-btn");
+    const userCheckEmailBtn = document.getElementById("check-email-btn");
     const emailInput = document.getElementById("email");
     const errorMessage = document.querySelector(".signup-error-message p");
 
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    checkEmailBtn.addEventListener("click", function () {
+    userCheckEmailBtn.addEventListener("click", function () {
         const email = emailInput.value.trim();
 
         if (!email) {
