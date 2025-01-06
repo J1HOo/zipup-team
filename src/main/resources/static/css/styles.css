@@ -66,6 +66,7 @@ input[type=number] {
 
 #email.zipup-input {
     margin-bottom: 1px;
+}
 
 .zipup-btn {
     width: 407px;
@@ -90,7 +91,7 @@ input[type=number] {
     margin-top: 10px;
 }
 
-/* -------------------- 헤더, 푸터 파트 ----------------------- */
+/* -------------------- 헤더, 푸터 파트 ------------------------ */
 
 .header {
     display: flex;
@@ -288,6 +289,17 @@ input[type=number] {
 }
 .signup-button-box:hover p {
     color: #3e71fe;
+}
+
+.signup-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none; /* 링크 밑줄 제거 */
+    color: inherit; /* 부모 색상 상속 */
 }
 
 /* -------------------- 아이디, 비밀번호 찾기 파트 ----------------------- */
