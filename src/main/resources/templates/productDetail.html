@@ -68,7 +68,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="zipup-btn">바로 구매</button>
+                <button type="submit" class="zipup-btn" th:disabled="${session.loginUser.role == 'seller'}">바로 구매</button>
             </div>
         </div>
 
