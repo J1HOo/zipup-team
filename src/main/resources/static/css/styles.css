@@ -1040,6 +1040,12 @@ input[type=number] {
 
 .pc-container .info-name {
     grid-column: 1 / -1;
+    font-size: 14px;
+    color: black;
+}
+
+.pc-container .info-product-name {
+    grid-column: 1 / -1;
     font-size: 18px;
     color: black;
 }
@@ -1061,7 +1067,23 @@ input[type=number] {
 .pc-container .span-price {
     color: #FA3C56;
     font-size: 18px;
+    font-weight: bold;
 }
+
+.pc-container .won {
+    color: #FA3C56;
+    font-size: 15px;
+    justify-content: end;
+    display: flex;
+    align-items: end;
+}
+
+.pc-container .info-home {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
 
 /* --------------------  상품 리스트 -------------------- */
 .slider-container {
