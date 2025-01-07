@@ -98,6 +98,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z.-]+\.com$/;
     const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*+=-])[A-Za-z\d!@#$%^&*+=-]{8,}$/;
 
+    // 이메일 입력 필드의 값이 변경될 때마다 상태 초기화
+    emailInput.addEventListener("input", function () {
+        sellerEmailChecked = false;  // 이메일 변경 시 중복 확인 상태 초기화
+    });
+
     checkEmailBtn.addEventListener("click", function () {
         const email = emailInput.value;
 
