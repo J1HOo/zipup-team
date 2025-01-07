@@ -23,14 +23,9 @@ public class AuthController {
 
     // 이용자 회원가입
     @PostMapping("/signup/user")
-    public String userSignup(@ModelAttribute("user") User user, Model model) {
-        if (userService.isEmailTaken(user.getEmail())) {
-
-            return "userSignup"; // 회원가입 페이지로 다시 이동
-        }
+    public String userSignup(@ModelAttribute("user") User user) {
         user.setRole("user"); // 이용자 역할 설정
         userService.insertUser(user);
-
         return "/login";
     }
     // 이메일 중복체크
@@ -131,8 +126,9 @@ public class AuthController {
         User loggedInUser = (User) session.getAttribute("loginUser");
         if(loggedInUser != null){
             model.addAttribute("user", loggedInUser);
-        }else{
-            model.addAttribute("user", new User());
+        }
+        if(loggedInUser == null){
+        return "redirect:/";
         }
         return "mypage";
     }

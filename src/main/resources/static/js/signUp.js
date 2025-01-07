@@ -38,17 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     const userCheckEmailBtn = document.getElementById("check-email-btn");
     const emailInput = document.getElementById("email");
-    const errorMessage = document.querySelector(".signup-error-message p");
 
-    if (errorMessage) {
-        // 다른 곳을 클릭하면 에러 메시지를 숨김
-        document.addEventListener("click", function (event) {
-            // 클릭한 요소가 에러 메시지가 아닐 경우 숨김
-            if (!errorMessage.contains(event.target)) {
-                errorMessage.style.display = "none";
-            }
-        });
-    }
+
 
     userCheckEmailBtn.addEventListener("click", function () {
         const email = emailInput.value.trim();
