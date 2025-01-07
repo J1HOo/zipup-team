@@ -3,9 +3,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const passwordInput = document.getElementById("password");
     const userNameInput = document.getElementById("userName");
     const userForm = document.querySelector(".signup-user-form");
+    const userEmailInput = document.getElementById("email");
 
     const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*+=-])[A-Za-z\d!@#$%^&*+=-]{8,}$/;
     const namePattern = /^[A-Za-z가-힣]+$/;
+
+    // 이메일 입력 필드 변경 시 이메일 중복 확인 상태 초기화
+    userEmailInput.addEventListener("input", function () {
+        isEmailChecked = false; // 이메일 변경 시 중복 확인 초기화
+    });
 
     // 폼 제출 시 비밀번호 및 이름 검사
     userForm.addEventListener("submit", function (event) {
@@ -36,13 +42,21 @@ document.addEventListener("DOMContentLoaded", function () {
 /******************** 아이디(이메일) 중복************************************************/
 
 document.addEventListener("DOMContentLoaded", function () {
-    const userCheckEmailBtn = document.getElementById("check-email-btn");
+    const userCheckEmailBtn = document.getElementById("user-check-email-btn");
     const emailInput = document.getElementById("email");
 
 
 
     userCheckEmailBtn.addEventListener("click", function () {
         const email = emailInput.value.trim();
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+
+        // 이메일 패턴 체크
+        if (!emailPattern.test(email)) {
+            alert("이메일 형식이 올바르지 않습니다.");
+            return;
+        }
+
 
         if (!email) {
             alert("이메일을 입력하세요.");
