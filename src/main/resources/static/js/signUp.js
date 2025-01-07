@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const emailInput = document.getElementById("email");
     const passwordInput = document.getElementById("password");
     const form = document.querySelector(".signup-form");
-    const checkEmailBtn = document.getElementById("check-email-btn");
+    const checkEmailBtn = document.getElementById("check-selleremail-btn");
 
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
     const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*+=-])[A-Za-z\d!@#$%^&*+=-]{8,}$/;
@@ -98,8 +98,10 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => response.json())
             .then(data => {
                 if (data.isTaken) {
+                    alert("중복된 이메일입니다. 다른 이메일을 입력하세요.");
                     sellerEmailChecked = false; // 이메일 중복
                 } else {
+                    alert("사용 가능한 이메일입니다.");
                     sellerEmailChecked = true; // 이메일 사용 가능
                 }
             })

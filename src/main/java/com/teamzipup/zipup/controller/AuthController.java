@@ -38,6 +38,13 @@ public class AuthController {
 
 
     // 판매자 회원가입
+
+    /**
+     *
+     * @param user
+     * @param model
+     * @return
+     */
     @PostMapping("/signup/seller")
     public String sellerSignup(@ModelAttribute("user") User user, Model model) {
         user.setRole("seller"); // 판매자 역할 설정

@@ -33,6 +33,16 @@ public class ProductController {
     }
 
     /* 메인 페이지 */
+
+    /**
+     * 
+     * @param category
+     * @param searchType
+     * @param query
+     * @param sortOrder
+     * @param model
+     * @return
+     */
     @GetMapping("/")
     public String mainPage(@RequestParam(value = "category", required = false) String category,
                            @RequestParam(value = "searchType", required = false) String searchType,
