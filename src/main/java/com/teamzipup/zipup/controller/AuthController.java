@@ -22,12 +22,24 @@ public class AuthController {
     }
 
     // 이용자 회원가입
+
+    /**
+     *
+     * @param user
+     * @return
+     */
     @PostMapping("/signup/user")
     public String userSignup(@ModelAttribute("user") User user) {
         user.setRole("user"); // 이용자 역할 설정
         userService.insertUser(user);
         return "/login";
     }
+
+    /**
+     *
+     * @param email
+     * @return
+     */
     // 이메일 중복체크
     @GetMapping("/check-email")
     @ResponseBody
