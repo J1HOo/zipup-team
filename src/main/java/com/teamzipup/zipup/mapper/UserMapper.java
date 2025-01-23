@@ -23,7 +23,7 @@ public interface UserMapper {
     User findByEmail(String email);
 
     // 아이디 찾기
-    User findByUserNameAndPassword(String userName, String password);
+    User findByPhoneNumberAndPassword(String phoneNumber, String password);
 
     // 비밀번호 찾기
     User findByEmailAndPhoneNumber(String email, String phoneNumber);

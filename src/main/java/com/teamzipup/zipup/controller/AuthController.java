@@ -100,13 +100,13 @@ public class AuthController {
 
     @PostMapping("/find/email")
     public String findEmail(
-            @RequestParam("userName") String userName,
+            @RequestParam("phoneNumber") String phoneNumber,
             @RequestParam("password") String password,
             Model model,
             RedirectAttributes redirectAttributes
     ) {
         try {
-            String email = userService.findEmail(userName, password);
+            String email = userService.findEmail(phoneNumber, password);
             model.addAttribute("email", email);
             return "findEmailResult";
         } catch (Exception e) {

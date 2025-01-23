@@ -34,9 +34,9 @@
             SELECT 1 FROM user WHERE email = #{email}
         )
     </select>
-    <!-- 이름과 비밀번호로 사용자 찾기 -->
-    <select id="findByUserNameAndPassword">
-        SELECT * FROM USER WHERE USERNAME = #{userName} AND PASSWORD = #{password}
+    <!-- 전화번호와 비밀번호로 사용자 찾기 -->
+    <select id="findByPhoneNumberAndPassword">
+        SELECT * FROM USER WHERE PHONENUMBER = #{phoneNumber} AND PASSWORD = #{password}
     </select>
 
     <!-- 이메일과 전화번호로 사용자 찾기 -->
